@@ -1,0 +1,95 @@
+html {
+  font-family: Verdana;
+  font-size: 16px;
+  color: #5c5c5c;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 3.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+/* header section */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: white;
+  height: 4rem;
+}
+
+header img {
+  height: 2.5rem;
+}
+
+header ul {
+  display: flex;
+  margin-right: 1.5rem;
+}
+
+header li {
+  padding-left: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  margin: 1.5rem;
+}
+
+/* ???better solution??? */
+  .colmar {
+    font-weight: bold;
+  }
+
+  .academy {
+    color: gray;
+  }
+
+  /* banner section */
+.banner{
+  display: flex;
+  position: relative;
+  top: 4rem;
+  background-color: #e8e8e8;
+}
+
+.banner-image {
+  width: 60%;
+  margin: 2rem 1.5rem;
+}
+
+.banner-image img {
+  width: 100%;
+}
+
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+}
+
+.banner-text h1, h2 {
+  margin: 1rem;
+}
+
+.banner-button {
+  margin: 1rem;
+  padding: .5rem;
+  font-size: 1.25rem;
+  background-color: #5c5c5c;
+  color: white;
+  text-align: center;
+}
