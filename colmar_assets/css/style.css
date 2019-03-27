@@ -1,18 +1,33 @@
 html {
-  font-family: Verdana;
+  font-family: "Montserrat";
   font-size: 16px;
   color: #5c5c5c;
 }
 
+a {
+  color: white;
+}
+
 h1 {
-  font-size: 3rem;
+  font-size: 2.9rem;
   font-weight: bold;
-  line-height: 3.5rem;
+  line-height: 3.75rem;
 }
 
 h2 {
   font-size: 1.5rem;
-  line-height: 2rem;
+  font-weight: 500;
+  line-height: 2.25rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.container {
+  position: relative;
+  top: 4rem;
 }
 
 /* header section */
@@ -60,36 +75,112 @@ header li {
   /* banner section */
 .banner{
   display: flex;
-  position: relative;
-  top: 4rem;
   background-color: #e8e8e8;
 }
 
-.banner-image {
+.banner-left {
   width: 60%;
   margin: 2rem 1.5rem;
 }
 
-.banner-image img {
+.banner-left img {
   width: 100%;
+}
+
+.banner-right {
+  display: flex;
+  width: 40%;
+  margin: 1rem;
+  align-items: center;
 }
 
 .banner-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40%;
+  width: 90%;
+  margin: 1rem;
 }
 
-.banner-text h1, h2 {
-  margin: 1rem;
+.banner h2 {
+  margin: 1.75rem 0;
 }
 
 .banner-button {
-  margin: 1rem;
-  padding: .5rem;
-  font-size: 1.25rem;
   background-color: #5c5c5c;
-  color: white;
   text-align: center;
+  padding: 1rem;
+  width: 80%;
+  font-size: 1.25rem;
+}
+
+/* information section */
+.information {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.info-left {
+  width: 60%;
+  margin: 2rem 1.5rem;
+}
+
+.info-left img {
+  width: 100%;
+}
+
+.info-left h1 {
+  font-size: 2.5rem;
+  margin: 2rem 0 1.5rem 0;
+}
+
+.info-left h3 {
+  padding-bottom: 2rem;
+}
+
+.info-right {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 1rem 0 2rem 1rem;
+  border-left: 1px solid #e8e8e8;
+}
+
+.info-item {
+  display: flex;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 1rem 0 1rem 1rem;
+  height: 100%;
+}
+
+.highlight {
+  background-color: #e8e8e8;
+}
+
+.info-item-image {
+  width: 35%;
+  margin: auto;
+}
+
+.info-item-image img {
+  width: 100%;
+  height: auto;
+}
+
+.info-item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin: 0 1.5rem;
+  width: 65%;
+}
+
+.info-item-text h4 {
+  padding-top: .5rem;
+}
+
+.info-item-text h4:nth-child(3) {
+  color: blue;
+  margin: .5rem 0 1rem 0;
 }
