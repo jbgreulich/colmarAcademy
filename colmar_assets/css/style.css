@@ -248,3 +248,68 @@ header li {
   margin: .5rem 0;
   text-transform: uppercase;
 }
+
+/* thesis section */
+.thesis h1 {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.thesis-container {
+  display: flex;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.thesis-left {
+  flex-basis: 60%;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.thesis-left video {
+  width: 100%;
+}
+
+.thesis-left-text h2 {
+  padding: 1.5rem 0 .5rem 0;
+}
+
+.thesis-left-text h4 {
+  line-height: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.thesis-right {
+  flex-basis: 40%;
+}
+
+.exhibit {
+  display: flex;
+  flex: 1 auto;
+}
+
+.exhibit:first-of-type {
+  background-color: #e8e8e8;
+}
+
+.exhibit-image {
+  flex: 1 35%;
+  padding: 1rem;
+  min-width: 35%;
+}
+
+.exhibit-image img {
+  width: 100%;
+  height: auto;
+}
+
+.exhibit-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 65%;
+  align-items: left;
+}
+
+.exhibit-text h2 {
+  padding-bottom: .5rem;
+}
