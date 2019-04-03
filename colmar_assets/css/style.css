@@ -5,13 +5,13 @@ html {
 }
 
 a {
-  color: white;
+  color: inherit;
 }
 
 h1 {
-  font-size: 2.9rem;
+  font-size: 2.75rem;
   font-weight: bold;
-  line-height: 3.75rem;
+  line-height: 3rem;
 }
 
 h2 {
@@ -38,9 +38,6 @@ h4 {
 
 /* header section */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -48,34 +45,54 @@ header {
   height: 4rem;
 }
 
-header img {
-  height: 2.5rem;
-}
-
-header ul {
+.desktop-header {
   display: flex;
-  margin-right: 1.5rem;
-}
-
-header li {
-  padding-left: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
+  flex-grow: 1;
   text-transform: uppercase;
   font-size: 1.5rem;
-  margin: 1.5rem;
 }
 
-/* ???better solution??? */
-  .colmar {
-    font-weight: bold;
-  }
+.home {
+  display: flex;
+  align-items: center;
+}
 
-  .academy {
-    color: gray;
+header img {
+  height: 2.5rem;
+  margin-left: 1.5rem;
+}
+
+nav {
+  margin-right: 1.5rem;
+}
+
+nav span {
+  padding-left: 1rem;
+}
+
+.mobile-header {
+  display: none;
+}
+
+  /* mobile nav section */
+  @media only screen and (max-width: 720px) {
+    .desktop-header {
+      display: none;
+    }
+
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 1.5rem;
+      align-items: center;
+      height: 4rem;
+    }
   }
 
   /* banner section */
@@ -96,20 +113,17 @@ header li {
 .banner-right {
   display: flex;
   flex-basis: 40%;
-  margin: 1rem 0;
-  align-items: center;
 }
 
 .banner-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 90%;
-  padding: 1rem 3rem 1rem 1rem;
+  padding: 1rem 4rem 1rem 0;
 }
 
 .banner h2 {
-  margin: 1.75rem 0;
+  margin: 2rem auto 1.5rem auto;
 }
 
 .banner-button {
@@ -121,6 +135,7 @@ header li {
   border: 0.1em solid #e8e8e8;
   border-radius: 0.12em;
   transition: all 0.2s;
+  color: white;
 }
 
 .banner-button:hover {
@@ -129,10 +144,34 @@ header li {
   border: 0.1em solid #000000;
 }
 
+  /* mobile banner section */
+  @media only screen and (max-width: 720px) {
+    .banner {
+      flex-direction: column;
+    }
+
+    .banner-left {
+      flex-basis: 100%;
+      margin: 0;
+    }
+
+    .banner-right {
+      flex-basis: 100%;
+      margin: 2rem 1rem;
+    }
+
+    .banner-text {
+      padding: 0;
+    }
+
+    .banner-button {
+      width: auto;
+    }
+  }
+
 /* information section */
 .information {
   display: flex;
-  margin-bottom: 2rem;
 }
 
 .info-left {
@@ -156,45 +195,36 @@ header li {
 }
 
 .info-right {
+  flex-basis: 40%;
+  border-left: 1px solid #e8e8e8;
+  margin: 2rem 0;
+}
+
+.info-desktop {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  flex-basis: 40%;
-  margin: 2rem 0;
-  border-left: 1px solid #e8e8e8;
 }
 
 .info-item {
   display: flex;
-  flex: 1 auto;
-  border-bottom: 1px solid #e8e8e8;
-  padding-left: 1rem;
+  align-items: flex-start;
+  flex-grow: 1;
 }
 
-.info-item:first-of-type {
-  margin-bottom: 0;
-}
-
-.info-item:not(:first-of-type) {
-  padding-top: 1rem;
-}
-
-.info-item-image {
-  flex: 1 35%;
-  min-width: 35%;
-}
-
-.info-item-image img {
-  width: 100%;
+.info-item img {
+  width: 35%;
   height: auto;
+  margin: 1rem;
+}
+
+.info-desktop div:first-child img {
+  margin-top: 0;
 }
 
 .info-item-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1 65%;
-  align-items: left;
-  padding-left: 1.5rem;
+  width: 65%;
+  margin: auto;
 }
 
 .info-item-text h4 {
@@ -202,14 +232,52 @@ header li {
   line-height: 1.4rem;
 }
 
-.info-right div:nth-of-type(3n) {
+.info-desktop div:nth-of-type(3n) {
   background-color: #e8e8e8;
-  /* border-top: 8px solid #e8e8e8; */
 }
 
-.info-item-text h4:nth-child(3) {
+.info-item-text h4:last-child {
   color: blue;
 }
+
+.info-mobile {
+  display: none;
+}
+
+  /* mobile information section */
+  @media only screen and (max-width: 720px) {
+    .info-left {
+      display: none;
+    }
+
+    .info-desktop {
+      display: none;
+    }
+
+    .info-right {
+      flex-basis: 100%;
+      margin: 0;
+    }
+
+    .info-mobile {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem;
+    }
+
+    .info-mobile img {
+      width: 100%;
+    }
+
+    .info-item-mobile:nth-of-type(2n) {
+      margin: 3rem 0;
+    }
+
+    .info-item-text {
+      width: auto;
+      margin: 1rem;
+    }
+  }
 
 /* learning section */
 .learning {
@@ -221,7 +289,7 @@ header li {
   padding: 2rem 0;
 }
 
-.subjects {
+.subjects-desktop {
   padding: 0 3.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -230,7 +298,7 @@ header li {
 .subject {
   background-color: #ffffff;
   margin: 0 1rem 2rem 1rem;
-  flex: 1 30%;
+  flex: 1 1 30%;
 }
 
 .subject img {
@@ -248,6 +316,41 @@ header li {
   margin: .5rem 0;
   text-transform: uppercase;
 }
+
+.subjects-mobile {
+  display: none;
+}
+
+  /* mobile subject section */
+  @media only screen and (max-width: 720px) {
+    .learning {
+      background-color: #ffffff;
+      border-top: 1px solid #e8e8e8;
+      padding: 2rem 1rem;
+    }
+
+    .learning h1 {
+      padding: 0 0 .5rem 0;
+    }
+
+    .subjects-desktop {
+      display: none;
+    }
+
+    .subjects-mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-mobile {
+      margin-top: .5rem;
+      background-color: #e8e8e8;
+    }
+
+    .title-mobile h2 {
+      padding: 1rem 1.5rem 1rem 1rem;
+    }
+  }
 
 /* thesis section */
 .thesis h1 {
@@ -313,3 +416,51 @@ header li {
 .exhibit-text h2 {
   padding-bottom: .5rem;
 }
+
+  @media only screen and (max-width: 720px) {
+    .thesis {
+      border-top: 1px solid #e8e8e8;
+    }
+
+    .thesis h1 {
+      padding-bottom: 1rem ;
+    }
+
+    .thesis-container {
+      border: none;
+    }
+
+    .thesis-left {
+      flex-basis: 100%;
+      padding: 0;
+    }
+
+    .thesis-left-text {
+      display: none;
+    }
+
+    .thesis-left video {
+      padding-bottom: 1.5rem;
+    }
+
+    .thesis-right {
+      display: none;
+    }
+  }
+
+/* footer section */
+footer {
+  padding: 1rem 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  font-size: .75rem;
+}
+
+  @media only screen and (max-width: 720px) {
+    .other {
+      display: none;
+    }
+  }
