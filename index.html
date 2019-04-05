@@ -2,9 +2,13 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
   <title>Colmar Academy</title>
+
+  <link rel="icon" href="colmar_assets/images/ic-logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="colmar_assets/css/reset.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,700,800" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="colmar_assets/css/style.css">
 </head>
 
@@ -16,14 +20,14 @@
     <!-- desktop nav section -->
     <div class="desktop-header">
       <a class="home" href="#">
-        <img src="colmar_assets/images/ic-logo.svg" alt="colmar logo">
+        <img id="test" src="colmar_assets/images/ic-logo.svg" alt="colmar logo">
         <p class="logo"><strong>colmar</strong>academy</p>
       </a>
       <nav>
-        <span>On campus</span>
-        <span>Online</span>
-        <span>For companies</span>
-        <span>Sign in</span>
+        <span><a href="#">On campus</a></span>
+        <span><a href="#">Online</a></span>
+        <span><a href="#">For companies</a></span>
+        <span><a href="#">Sign in</a></span>
       </nav>
     </div>
 
@@ -80,7 +84,7 @@
             <div class="info-item-text">
               <h2>Orientation date</h2>
               <h4>Tue 10/11 & Wed 10/12: 8am-3pm</h4>
-              <h4>Read more</h4>
+              <h4><a href="#">Read more</a></h4>
             </div>
           </div>
           <div class="info-item">
@@ -88,7 +92,7 @@
             <div class="info-item-text">
               <h2>Our campus</h2>
               <h4>Find which campus is close by you</h4>
-              <h4>Read more</h4>
+              <h4><a href="#">Read more</a></h4>
             </div>
           </div>
           <div class="info-item">
@@ -96,7 +100,7 @@
             <div class="info-item-text">
               <h2>Our guest lecture</h2>
               <h4>Join a keynote with Oliver Sack about music in medical treatment</h4>
-              <h4>Read more</h4>
+              <h4><a href="#">Read more</a></h4>
             </div>
           </div>
         </div>
@@ -104,27 +108,33 @@
         <!-- mobile informatin section right -->
         <div class="info-mobile">
           <div class="info-item-mobile">
-            <img src="colmar_assets/images/information-orientation-mobile.jpg" alt="students walking on path">
+            <div class="gradient-container">
+              <img src="colmar_assets/images/information-orientation-mobile.jpg" alt="students walking on path">
+            </div>
             <div class="info-item-text">
               <h2>Orientation date</h2>
               <h4>Tue 10/11 & Wed 10/12: 8am-3pm</h4>
-              <h4>Read more</h4>
+              <h4><a href=#">Read more</a></h4>
             </div>
           </div>
           <div class="info-item-mobile">
-            <img src="colmar_assets/images/information-campus-mobile.jpg" alt="campus dining hall">
+            <div class="gradient-container">
+              <img src="colmar_assets/images/information-campus-mobile.jpg" alt="campus dining hall">
+            </div>
             <div class="info-item-text">
               <h2>Our campus</h2>
               <h4>Find which campus is close by you</h4>
-              <h4>Read more</h4>
+              <h4><a href=#">Read more</a></h4>
             </div>
           </div>
           <div class="info-item-mobile">
-            <img src="colmar_assets/images/information-guest-lecture-mobile.jpg" alt="man in beret">
+            <div class="gradient-container">
+              <img src="colmar_assets/images/information-guest-lecture-mobile.jpg" alt="man in beret">
+            </div>
             <div class="info-item-text">
               <h2>Our guest lecture</h2>
               <h4>Join a keynote with Oliver Sack about music in medical treatment</h4>
-              <h4>Read more</h4>
+              <h4><a href=#">Read more</a></h4>
             </div>
           </div>
         </div>
@@ -144,7 +154,7 @@
         <div class="subject">
           <img src="colmar_assets/images/course-software.jpg" alt="desk with computer">
           <div class="subject-text">
-            <h2>Software engineering</h2>
+            <h2>Software Engineering</h2>
             <h4>Courses</h4>
             <h4>Web Development, Mobile Development, iOT, APIs</h4>
           </div>
@@ -194,10 +204,10 @@
       <!-- mobile learning section -->
       <div class="subjects-mobile">
         <div class="title-mobile">
-          <h2>Software engineering</h2>
+          <h2>Software Engineering</h2>
         </div>
         <div class="title-mobile">
-          <h2>Computer art</h2>
+          <h2>Computer Art</h2>
         </div>
         <div class="title-mobile">
           <h2>Design</h2>
@@ -220,12 +230,13 @@
     <div class="thesis">
       <h1>Thesis exhibit</h1>
 
+      <!-- thesis section left -->
       <div class="thesis-container">
         <div class="thesis-left">
           <div class="video">
             <video controls width="500px">
               <source src="colmar_assets/videos/thesis.mp4" type="video/mp4" autoplay poster="posterimage.jpg">
-              Sorry, your browser doesn't support embedded videos.
+              Browser does not support video.
             </video>
           </div>
           <div class="thesis-left-text">
@@ -234,28 +245,28 @@
           </div>
         </div>
 
+        <!-- thesis section right -->
         <div class="thesis-right">
           <div class="exhibit">
-            <div class="exhibit-image">
-              <img src="colmar_assets/images/thesis-fisma.jpg" alt="highlighting paper">
-            </div>
+          <div class="exhibit-item">
+            <img src="colmar_assets/images/thesis-fisma.jpg" alt="highlighting paper">
             <div class="exhibit-text">
               <h2>Fisma: Design and Prototype</h2>
               <h4>Designer showcase of new prototype products</h4>
             </div>
           </div>
-          <div class="exhibit">
-            <div class="exhibit-image">
-              <img src="colmar_assets/images/thesis-now-and-then.jpg" alt="new york skyline">
-            </div>
+          <div class="exhibit-item">
+            <img src="colmar_assets/images/thesis-now-and-then.jpg" alt="new york skyline">
             <div class="exhibit-text">
               <h2>Now and then</h2>
               <h4>Research study about New York</h4>
             </div>
           </div>
+          </div>
         </div>
 
       </div>
+
     </div>
     <!-- end thesis section -->
 

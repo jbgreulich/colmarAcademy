@@ -1,7 +1,15 @@
+:root {
+  --bg-color: #E6E8DB;
+  --font-color: #4C4C42;
+  --colmar-color: #D4B22C;
+  --header-text: #7f6601;
+  --learn-color: #E5D180;
+}
+
 html {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-  color: #5c5c5c;
+  color: var(--font-color);
 }
 
 a {
@@ -39,10 +47,12 @@ h4 {
 /* header section */
 header {
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   width: 100%;
   background-color: white;
   height: 4rem;
+  border-bottom: 1px solid var(--bg-color);
+  color: var(--header-text);
 }
 
 .desktop-header {
@@ -58,6 +68,10 @@ header {
   font-size: 1.5rem;
 }
 
+.logo strong {
+  color: var(--colmar-color);
+}
+
 .home {
   display: flex;
   align-items: center;
@@ -66,6 +80,7 @@ header {
 header img {
   height: 2.5rem;
   margin-left: 1.5rem;
+  opacity: .8;
 }
 
 nav {
@@ -76,12 +91,30 @@ nav span {
   padding-left: 1rem;
 }
 
+nav span:hover {
+  text-decoration: underline;
+}
+
 .mobile-header {
   display: none;
 }
 
   /* mobile nav section */
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 720px) and (min-width: 561px) {
+    header img {
+      height: 2rem;
+    }
+
+    .logo {
+      font-size: 1rem;
+    }
+
+    nav span {
+      font-size: .75rem;
+    }
+  }
+
+  @media only screen and (max-width: 560px) {
     .desktop-header {
       display: none;
     }
@@ -98,7 +131,7 @@ nav span {
   /* banner section */
 .banner{
   display: flex;
-  background-color: #e8e8e8;
+  background-color: var(--bg-color);
 }
 
 .banner-left {
@@ -127,21 +160,21 @@ nav span {
 }
 
 .banner-button {
-  background-color: #5c5c5c;
+  background-color: var(--font-color);
   text-align: center;
   padding: 1rem;
   width: 80%;
   font-size: 1.25rem;
-  border: 0.1em solid #e8e8e8;
-  border-radius: 0.12em;
-  transition: all 0.2s;
+  border: 0.1em solid var(--bg-color);
+  border-radius: 0.15em;
   color: white;
 }
 
 .banner-button:hover {
-  color: black;
-  background-color: #e8e8e8;
-  border: 0.1em solid #000000;
+  color: var(--font-color);
+  background-color: var(--bg-color);
+  border: 0.1em solid var(--font-color);
+  transition: all 0.3s ease;
 }
 
   /* mobile banner section */
@@ -196,7 +229,7 @@ nav span {
 
 .info-right {
   flex-basis: 40%;
-  border-left: 1px solid #e8e8e8;
+  border-left: 1px solid var(--bg-color);
   margin: 2rem 0;
 }
 
@@ -232,12 +265,17 @@ nav span {
   line-height: 1.4rem;
 }
 
-.info-desktop div:nth-of-type(3n) {
-  background-color: #e8e8e8;
+.info-item:hover {
+  background-color: var(--bg-color);
 }
 
 .info-item-text h4:last-child {
-  color: blue;
+  font-style: italic;
+  color: var(--header-text);
+}
+
+.info-item-text a:hover {
+  color: var(--colmar-color);
 }
 
 .info-mobile {
@@ -245,7 +283,19 @@ nav span {
 }
 
   /* mobile information section */
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 720px) and (min-width: 561px) {
+    .info-item-text h2 {
+      font-size: .95rem;
+      line-height: normal;
+    }
+
+    .info-item-text {
+      font-size: .8rem;
+      margin: 1rem .5rem 0 0;
+    }
+  }
+
+  @media only screen and (max-width: 560px) {
     .info-left {
       display: none;
     }
@@ -265,8 +315,35 @@ nav span {
       margin: 1rem;
     }
 
-    .info-mobile img {
-      width: 100%;
+    .info-item-mobile img {
+      flex-shrink: 0;
+      max-width: 100%;
+      z-index: -2;
+      position: relative;
+    }
+
+    .gradient-container {
+      position: relative;
+      background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0));
+      z-index: 1;
+      display: flex;
+    }
+
+    .gradient-container::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0), 60%, rgba(0,0,0,.6));
+      z-index: -1;
+      transition: opacity .25s linear;
+      opacity: 0;
+    }
+
+    .info-item-mobile:hover .gradient-container::before {
+      opacity: 1;
     }
 
     .info-item-mobile:nth-of-type(2n) {
@@ -281,7 +358,7 @@ nav span {
 
 /* learning section */
 .learning {
-  background-color: #e8e8e8;
+  background-color: var(--bg-color);
 }
 
 .learning h1 {
@@ -301,9 +378,18 @@ nav span {
   flex: 1 1 30%;
 }
 
+.subject:hover img {
+  opacity: 1;
+}
+
+.subject:hover {
+  background: linear-gradient(#ffffff, 90%, var(--learn-color));
+}
+
 .subject img {
   width: 100%;
   height: auto;
+  opacity: .85;
 }
 
 .subject-text {
@@ -322,10 +408,10 @@ nav span {
 }
 
   /* mobile subject section */
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 560px) {
     .learning {
       background-color: #ffffff;
-      border-top: 1px solid #e8e8e8;
+      border-top: 1px solid var(--bg-color);
       padding: 2rem 1rem;
     }
 
@@ -344,11 +430,16 @@ nav span {
 
     .title-mobile {
       margin-top: .5rem;
-      background-color: #e8e8e8;
+      background-color: var(--bg-color);
+    }
+
+    .title-mobile:hover {
+      background-color: var(--header-text);
+      color: var(--bg-color);
     }
 
     .title-mobile h2 {
-      padding: 1rem 1.5rem 1rem 1rem;
+      padding: 1rem 1rem 1.5rem 1rem;
     }
   }
 
@@ -360,7 +451,7 @@ nav span {
 
 .thesis-container {
   display: flex;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid var(--bg-color);
 }
 
 .thesis-left {
@@ -387,39 +478,37 @@ nav span {
 
 .exhibit {
   display: flex;
-  flex: 1 auto;
+  flex-direction: column;
 }
 
-.exhibit:first-of-type {
-  background-color: #e8e8e8;
+.exhibit-item {
+  display: flex;
+  align-items: flex-start;
 }
 
-.exhibit-image {
-  flex: 1 35%;
-  padding: 1rem;
-  min-width: 35%;
+.exhibit-item:hover {
+  background-color: var(--bg-color);
 }
 
-.exhibit-image img {
-  width: 100%;
+.exhibit-item img {
+  width: 35%;
   height: auto;
+  margin: 1rem;
 }
 
 .exhibit-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1 65%;
-  align-items: left;
+  width: 65%;
+  margin: auto;
+  padding: 0 .5rem .5rem 0;
 }
 
 .exhibit-text h2 {
-  padding-bottom: .5rem;
+  padding-bottom: 1rem;
 }
 
   @media only screen and (max-width: 720px) {
     .thesis {
-      border-top: 1px solid #e8e8e8;
+      border-top: 1px solid var(--bg-color);
     }
 
     .thesis h1 {
@@ -459,7 +548,7 @@ footer {
   font-size: .75rem;
 }
 
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 560px) {
     .other {
       display: none;
     }
